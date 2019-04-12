@@ -10,9 +10,12 @@ Order.prototype.addPizza = function(pizza) {
 }
 
 Order.prototype.getTotalPrice = function() {
-  this.pizzas.push(pizza);
+  var totalPrice = 0;
+  this.pizzas.forEach(function(pizza) {
+    totalPrice = totalPrice + pizza.price;
+  })
+  this.totalPrice = totalPrice;
 }
-
 
 //Pizza Object Logic
 function Pizza(size, crust) {
@@ -25,9 +28,31 @@ Pizza.prototype.addTopping = function(topping) {
   this.toppings.push(topping);
 }
 
-// Pizza.prototype.getPizzaPrice() = function() {
-//   this.
-// }
+Pizza.prototype.getPizzaPrice = function() {
+  this.price = 0;
+  if (this.size === "Small") {
+    this.price = this.price + 8;
+  } else if (this.size === "Medium") {
+    this.price = this.price + 10;
+  } else if (this.size === "Large") {
+    this.price = this.price + 12;
+  } else {
+    this.price = this.price + 14;
+  }
+  if (this.crust === "Gluten Free") {
+    this.price = this.price + 2;
+  } else if (this.crust === "Thin") {
+    this.price = this.price - 1;
+  } else if (this.crust === "Deep Dish") {
+    this.price = this.price + 3;
+  } else {
+    this.price = this.price;
+  }
+  for (var i = 0; i < this.toppings.length; i++) {
+    this.price = this.price + 1;
+  }
+  return this.price;
+}
 
 
 // Front End Logic
@@ -35,13 +60,16 @@ var newOrder= new Order();
 
 function displayPizza(pizzaToDisplay) {
     var toppingsString = pizzaToDisplay.toppings.join(", ");
-    $("#my-pizza-list").append("Size: " + pizzaToDisplay.size + "<br>" + "Crust: " + pizzaToDisplay.crust + "<br>" + "Toppings: " + toppingsString + "<br>" + "<br>");
+    $("#my-pizza-list").append("<br>" + "Size: " + pizzaToDisplay.size + "<br>" + "Crust: " + pizzaToDisplay.crust + "<br>" + "Toppings: " + toppingsString + "<br>" + "$" + pizzaToDisplay.price + ".00" + "<br>");
+}
+
+function displayTotalPrice() {
+  $("#my-order-total").empty().append("<br>" + "Total: $" + newOrder.totalPrice + ".00")
 }
 
 $(document).ready(function() {
   $("form#pizza-input").submit(function(event) {
     event.preventDefault();
-    debugger
     var pizzaSize = $("#input-size").val();
     var pizzaCrust = $("#input-crust").val();
     var newPizza = new Pizza(pizzaSize, pizzaCrust);
@@ -53,8 +81,11 @@ $(document).ready(function() {
       var toppingToAdd = toppingsArr[i];
       newPizza.addTopping(toppingToAdd)
     }
+    newPizza.getPizzaPrice();
     newOrder.addPizza(newPizza);
     displayPizza(newPizza);
+    newOrder.getTotalPrice();
+    displayTotalPrice();
     // $('input:checkbox[name=type]:checked').each(function() {
     //   toppingsArr.push($(this).val());
     //   console.log(toppingsArr);
