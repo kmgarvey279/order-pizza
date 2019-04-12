@@ -1,0 +1,10 @@
+body {
+  background-image: url("../img/pizza-logo.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding-bottom: 400px;
+  width:auto;
+  height:auto;
+
+}
