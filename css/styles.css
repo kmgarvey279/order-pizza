@@ -6,5 +6,38 @@ body {
   padding-bottom: 400px;
   width:auto;
   height:auto;
+}
 
+.jumbotron {
+  background-color: green;
+  text-align:center;
+}
+
+#pizza-input {
+  background-color: white;
+  text-align: center;
+}
+
+#submitBtn {
+  margin-top: 10px;
+}
+.panel {
+  background-color: orange;
+  border: 2px solid darkorange;
+  padding: 10px;
+}
+
+#takeout-buttons {
+  margin-top: 5px;
+}
+
+#hide-form {
+  display: none;
+  margin-top: 5px;
+}
+
+#my-pizza-list {
+}
+
+#my-order-total {
 }

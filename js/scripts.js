@@ -9,11 +9,18 @@ Order.prototype.addPizza = function(pizza) {
   this.pizzas.push(pizza);
 }
 
+Order.prototype.addDelivery = function() {
+  this.delivery = true;
+}
+
 Order.prototype.getTotalPrice = function() {
   var totalPrice = 0;
   this.pizzas.forEach(function(pizza) {
     totalPrice = totalPrice + pizza.price;
   })
+  if (this.delivery === true) {
+    totalPrice = totalPrice + 4;
+  }
   this.totalPrice = totalPrice;
 }
 
@@ -64,12 +71,16 @@ function displayPizza(pizzaToDisplay) {
 }
 
 function displayTotalPrice() {
+  if (newOrder.delivery === true) {
+  $("#delivery-charge").empty().append("Delivery Charge: $4.00" + "<br>")
+  }
   $("#my-order-total").empty().append("<br>" + "Total: $" + newOrder.totalPrice + ".00")
 }
 
 $(document).ready(function() {
   $("form#pizza-input").submit(function(event) {
     event.preventDefault();
+    debugger
     var pizzaSize = $("#input-size").val();
     var pizzaCrust = $("#input-crust").val();
     var newPizza = new Pizza(pizzaSize, pizzaCrust);
@@ -86,9 +97,17 @@ $(document).ready(function() {
     displayPizza(newPizza);
     newOrder.getTotalPrice();
     displayTotalPrice();
-    // $('input:checkbox[name=type]:checked').each(function() {
-    //   toppingsArr.push($(this).val());
-    //   console.log(toppingsArr);
-    // })
-  })
+  });
+
+  $("#delivery-btn").click(function(event) {
+    event.preventDefault();
+    $("#hide-form").show();
+    $("#takeout-buttons").hide();
+    newOrder.addDelivery();
+  });
+  $("#confirmBtn").click(function(event) {
+    event.preventDefault();
+    alert("Thank you for your order! Your pizzas will be ready for pickup or delivery within 20 minutes.")
+    location.reload();
+  });
 });

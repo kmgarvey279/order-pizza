@@ -8,6 +8,9 @@
     <title>Order Pizza</title>
   </head>
   <body>
+    <div class="jumbotron">
+      Pizza
+    </div>
     <div class="container">
       <form id="pizza-input">
         <div class="form-row">
@@ -112,12 +115,55 @@
             </div>
           </div>
         </div>
-        <button type="submit" name="subBtn" class="btn btn-warning btn-block">Add Pizza</button>
+        <div id="takeout-buttons">
+          <div class="btn-group">
+            <button type="button" id="takeout-btn" class="btn btn-success">Take Out</button>
+            <button type="button" id="delivery-btn" class="btn btn-danger">Delivery</button>
+          </div>
+        </div>
+        <div id="hide-form">
+          <div class="form-row">
+            <div class="col">
+              <div class="form-group">
+                <label for="street">Street Address</label>
+                <input type="text" class="form-control" id="street">
+              </div>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="city">City</label>
+                <input type="text" class="form-control" id="city">
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-group">
+                <label for="state">State</label>
+                <input type="text" class="form-control" id="state">
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-group">
+                <label for="zip">Zip-Code</label>
+                <input type="text" class="form-control" id="zip">
+              </div>
+            </div>
+          </div>
+        </div>
+        <button type="submit" id="submitBtn" class="btn btn-warning btn-block">Add Pizza</button>
       </form>
+      <div class=panel panel-default>
       <span id="my-pizza-list">
       </span>
-      <span id="my-order-total">
-      </span>
+      </div>
+      <div class=panel panel-default>
+        <span id="delivery-charge">
+        </span>
+        <span id="my-order-total">
+        </span>
+      </div>
+      <button type="button" id="confirmBtn" class="btn btn-warning btn-block">Confirm Order</button>
     </div>
   </body>
 </html>
