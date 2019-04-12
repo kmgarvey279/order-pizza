@@ -35,18 +35,30 @@ var newOrder= new Order();
 
 function displayOrder(orderToDisplay) {
   orderToDisplay.pizzas.forEach(function(pizza) {
-    $("#my-pizza-list").append(pizza.size + pizza.crust)
+    $("#my-pizza-list").append("Size: " + pizza.size + "<br>" + "Crust: " + pizza.crust + "<br>" + "Toppings: ");
+    // pizza.toppings.forEach(function(topping) {
+    //   $("#my-pizza-list").append(topping);
+    // })
+      toppingsString = pizza.toppings.join(", ");
+      $("#my-pizza-list").append(toppingsString);
   })
 }
 
 $(document).ready(function() {
   $("form#pizza-input").submit(function(event) {
     event.preventDefault();
-    alert("test");
+    debugger
     var pizzaSize = $("#input-size").val();
     var pizzaCrust = $("#input-crust").val();
-    var toppingsArr = []
     var newPizza = new Pizza(pizzaSize, pizzaCrust);
+    var toppingsArr = [];
+    $('input[type=checkbox]:checked').each(function() {
+      toppingsArr.push($(this).val());
+    })
+    for (var i = 0; i < toppingsArr.length; i++) {
+      var toppingToAdd = toppingsArr[i];
+      newPizza.addTopping(toppingToAdd)
+    }
     newOrder.addPizza(newPizza);
     displayOrder(newOrder);
     // $('input:checkbox[name=type]:checked').each(function() {
