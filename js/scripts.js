@@ -80,7 +80,6 @@ function displayTotalPrice() {
 $(document).ready(function() {
   $("form#pizza-input").submit(function(event) {
     event.preventDefault();
-    debugger
     var pizzaSize = $("#input-size").val();
     var pizzaCrust = $("#input-crust").val();
     var newPizza = new Pizza(pizzaSize, pizzaCrust);
@@ -105,6 +104,12 @@ $(document).ready(function() {
     $("#takeout-buttons").hide();
     newOrder.addDelivery();
   });
+
+  $("#takeout-btn").click(function(event) {
+    event.preventDefault();
+    $("#takeout-buttons").hide();
+  });
+
   $("#confirmBtn").click(function(event) {
     event.preventDefault();
     alert("Thank you for your order! Your pizzas will be ready for pickup or delivery within 20 minutes.")

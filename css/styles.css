@@ -8,13 +8,22 @@ body {
   height:auto;
 }
 
+img {
+  width: 230px;
+  length: 230px;
+}
+
 .jumbotron {
-  background-color: green;
+  background-image: url("../img/close-pizza.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
   text-align:center;
+  border: 4px solid darkred;
+  font-family: impact;
 }
 
 #pizza-input {
-  background-color: white;
+  background-color: #d1c577;
   text-align: center;
 }
 

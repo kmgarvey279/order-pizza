@@ -19,22 +19,21 @@ Output: "You ordered: one large, thin-crust, toppings: pepperoni, olives, mushro
 4) The program will include a total price which combines the prices of all the pizzas ordered.
 Input: "Large, thin-crust, toppings: pepperoni, olives, mushrooms, small, regular crust, toppings: extra cheese"
 Output: "You ordered: one large, thin-crust, toppings: pepperoni, olives, mushrooms. Price: $15.00, one small, regular crust, toppings: extra cheese. Price: $10.00 Your total price is $25.00"  
-5. If the range of numbers contains a number that matches two or more of the previously mentioned criteria, the behavior described in "spec 4" takes priority over the behavior described in both "spec 3" and "spec 2" and the behavior described in "spec 3" takes priority over the behavior described in "spec 2"
-Input: "24"
-Output: "..."Boop!", "Beep!", "Boop!", "I'm sorry, Dave. I'm afraid I can't do that.", "Boop!"._
-
+5. The program will allow the user to choose to have their pizza delivered and will prompt them to enter their address information. Adding delivery will increase the total price.
+Input: Press delivery button.
+Output: Address forms become visible. "Delivery fee: $4.00. Order total: (order total + 4)"_
 
 ## Setup/Installation Requirements
 
-* _Clone from the following repository: https://github.com/kmgarvey279/Epicodus-track-selector_
+* _Clone from the following repository: https://github.com/kmgarvey279/order-pizza_
 * _Navigate into the main folder and open the index.html file in your web browser of choice._
-*You will first be prompted to enter your name and press the "submit" button to see your response. Certain names and characters will trigger unique responses._
-*When prompted to enter a whole number, do so press the "submit" button to see your results. Non-whole-numbers will return a unique message._
-*After getting your results, you can enter another number and get a different set of results, or press the "reverse" button to see your results in reverse._
+*Begin by making your first pizza using the dropdown and checkbox forms_
+*At any time during this process, you can select "Take Out" or "Delivery"._
+*If "Delivery is selected, the buttons will disappear and forms prompting you for address information will appear._
+*Press "Add Pizza" to add a new pizza to your order and display both the cost of the pizza and the total cost for your order._
+*Continue to make additional pizzas until you have all of the styles you want. Then click the "Confirm Order" button to place your order._
 
 ## Known Bugs
-
-_._
 
 ## Support and contact details
 
