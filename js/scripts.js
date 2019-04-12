@@ -33,15 +33,9 @@ Pizza.prototype.addTopping = function(topping) {
 // Front End Logic
 var newOrder= new Order();
 
-function displayOrder(orderToDisplay) {
-  orderToDisplay.pizzas.forEach(function(pizza) {
-    $("#my-pizza-list").append("Size: " + pizza.size + "<br>" + "Crust: " + pizza.crust + "<br>" + "Toppings: ");
-    // pizza.toppings.forEach(function(topping) {
-    //   $("#my-pizza-list").append(topping);
-    // })
-      toppingsString = pizza.toppings.join(", ");
-      $("#my-pizza-list").append(toppingsString);
-  })
+function displayPizza(pizzaToDisplay) {
+    var toppingsString = pizzaToDisplay.toppings.join(", ");
+    $("#my-pizza-list").append("Size: " + pizzaToDisplay.size + "<br>" + "Crust: " + pizzaToDisplay.crust + "<br>" + "Toppings: " + toppingsString + "<br>" + "<br>");
 }
 
 $(document).ready(function() {
@@ -60,7 +54,7 @@ $(document).ready(function() {
       newPizza.addTopping(toppingToAdd)
     }
     newOrder.addPizza(newPizza);
-    displayOrder(newOrder);
+    displayPizza(newPizza);
     // $('input:checkbox[name=type]:checked').each(function() {
     //   toppingsArr.push($(this).val());
     //   console.log(toppingsArr);
