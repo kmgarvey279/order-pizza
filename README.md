@@ -6,7 +6,7 @@
 
 ## Description
 
-_Specs:
+Specs:
 1) The user can submit their choice of size, crust type, and toppings, and the program will return their inputs.  
 Input: "Large, thin-crust, toppings: pepperoni, olives, mushrooms"
 Output: "You ordered: one large, thin-crust pizza with pepperoni, olives, and mushrooms."
@@ -21,7 +21,7 @@ Input: "Large, thin-crust, toppings: pepperoni, olives, mushrooms, small, regula
 Output: "You ordered: one large, thin-crust, toppings: pepperoni, olives, mushrooms. Price: $15.00, one small, regular crust, toppings: extra cheese. Price: $10.00 Your total price is $25.00"  
 5. The program will allow the user to choose to have their pizza delivered and will prompt them to enter their address information. Adding delivery will increase the total price.
 Input: Press delivery button.
-Output: Address forms become visible. "Delivery fee: $4.00. Order total: (order total + 4)"_
+Output: Address forms become visible. "Delivery fee: $4.00. Order total: (order total + 4)"
 
 ## Setup/Installation Requirements
 
