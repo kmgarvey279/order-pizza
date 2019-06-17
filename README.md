@@ -2,7 +2,7 @@
 
 #### _This page allows the user to customize their pizza with the size, crust, and toppings of their choice and then see their final price, 04.12.2019_
 
-#### By _**Kevin Garvey** _
+#### By _**Kevin Garvey**_
 
 ## Description
 
