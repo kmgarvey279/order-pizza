@@ -27,11 +27,11 @@ Output: Address forms become visible. "Delivery fee: $4.00. Order total: (order 
 
 * _Clone from the following repository: https://github.com/kmgarvey279/order-pizza_
 * _Navigate into the main folder and open the index.html file in your web browser of choice._
-*Begin by making your first pizza using the dropdown and checkbox forms_
-*At any time during this process, you can select "Take Out" or "Delivery"._
-*If "Delivery is selected, the buttons will disappear and forms prompting you for address information will appear._
-*Press "Add Pizza" to add a new pizza to your order and display both the cost of the pizza and the total cost for your order._
-*Continue to make additional pizzas until you have all of the styles you want. Then click the "Confirm Order" button to place your order._
+* _Begin by making your first pizza using the dropdown and checkbox forms_
+* _At any time during this process, you can select "Take Out" or "Delivery"._
+* _If "Delivery is selected, the buttons will disappear and forms prompting you for address information will appear._
+* _Press "Add Pizza" to add a new pizza to your order and display both the cost of the pizza and the total cost for your order._
+* _Continue to make additional pizzas until you have all of the styles you want. Then click the "Confirm Order" button to place your order._
 
 ## Known Bugs
 
